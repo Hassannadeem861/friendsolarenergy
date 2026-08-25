@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/data/services";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import ServiceDetailClient from "./ServiceDetailClient";
 
 export function generateStaticParams() {
@@ -37,6 +37,10 @@ export default function ServiceDetailPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(service)) }}
       />
       <ServiceDetailClient service={service} />
     </>
