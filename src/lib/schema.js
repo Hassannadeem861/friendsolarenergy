@@ -7,8 +7,27 @@ export function organizationSchema() {
     "@type": "Organization",
     name: company.name,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/images/solar-logo.webp`,
     telephone: company.phone,
     email: company.email,
+    areaServed: {
+      "@type": "Country",
+      name: "Pakistan",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: company.phone,
+      contactType: "sales",
+      areaServed: "PK",
+      availableLanguage: ["English", "Urdu"],
+    },
+    knowsAbout: [
+      "Solar panels",
+      "Solar inverters",
+      "Solar batteries",
+      "Solar installation",
+      "Solar maintenance",
+    ],
     sameAs: [company.instagramUrl],
   };
 }
@@ -37,6 +56,25 @@ export function productSchema(product, locale = "en") {
     image: `${siteConfig.url}${product.image}`,
     ...(product.brand ? { brand: product.brand } : {}),
     // No fabricated aggregateRating or offers.price when data is unavailable.
+  };
+}
+
+export function serviceSchema(service, locale = "en") {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title[locale],
+    description: service.summary[locale],
+    provider: {
+      "@type": "Organization",
+      name: company.name,
+      url: siteConfig.url,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Pakistan",
+    },
+    serviceType: service.title[locale],
   };
 }
 

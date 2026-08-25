@@ -7,24 +7,62 @@ import { siteConfig } from "@/data/company";
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
+  applicationName: "Friend Solar Energy",
   title: {
     default: "Friend Solar Energy | Solar Products & Installation in Pakistan",
     template: "%s | Friend Solar Energy",
   },
   description:
     "Friend Solar Energy — 10+ years of solar industry experience. Shop solar panels, inverters, and batteries, or request professional solar installation across Pakistan.",
+  keywords: [
+    "solar panels Pakistan",
+    "solar installation Pakistan",
+    "solar inverters",
+    "solar batteries",
+    "residential solar installation",
+    "commercial solar solutions",
+  ],
+  authors: [{ name: "Friend Solar Energy" }],
+  creator: "Friend Solar Energy",
+  publisher: "Friend Solar Energy",
   icons: {
     icon: "/images/solar-logo.webp",
     shortcut: "/images/solar-logo.webp",
     apple: "/images/solar-logo.webp",
   },
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
+    title: "Friend Solar Energy | Solar Products & Installation in Pakistan",
+    description:
+      "Shop solar panels, inverters, batteries, and accessories, or get professional solar installation across Pakistan.",
     siteName: "Friend Solar Energy",
     locale: "en_PK",
+    url: "/",
+    images: [
+      {
+        url: "/images/solar-logo.webp",
+        alt: "Friend Solar Energy solar logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Friend Solar Energy | Solar Products & Installation in Pakistan",
+    description:
+      "Solar products and professional installation for homes and businesses across Pakistan.",
+    images: ["/images/solar-logo.webp"],
   },
 };
 
