@@ -13,6 +13,11 @@ export const metadata = {
   },
   description:
     "Friend Solar Energy — 10+ years of solar industry experience. Shop solar panels, inverters, and batteries, or request professional solar installation across Pakistan.",
+  icons: {
+    icon: "/images/solar-logo.webp",
+    shortcut: "/images/solar-logo.webp",
+    apple: "/images/solar-logo.webp",
+  },
   openGraph: {
     type: "website",
     siteName: "Friend Solar Energy",
