@@ -18,7 +18,7 @@ export const company = {
 };
 
 export const siteConfig = {
-  url: "https://www.friendsolarenergy.com", // placeholder — update to real domain
+  url: "https://solar-website-five-rho.vercel.app",
   defaultLocale: "en",
   locales: ["en", "ur"],
 };
