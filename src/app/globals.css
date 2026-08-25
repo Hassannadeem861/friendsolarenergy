@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body[dir="rtl"] {
+  font-family: var(--font-urdu);
+}
+
+/* Visible focus states for accessibility */
+:focus-visible {
+  outline: 2px solid theme("colors.solar.500");
+  outline-offset: 2px;
+}
